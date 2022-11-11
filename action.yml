@@ -9,7 +9,6 @@ inputs:
     description: Merged SBOM output location.
     required: true
     default: ".sboms/merged.xml"
-outputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
