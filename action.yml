@@ -1,8 +1,8 @@
 action: Merge SBOMs
 description: Uses CycloneDX to merge SBOMs
 inputs:
-  input-files:
-    description: "file(s) to merge"
+  input-files-pattern:
+    description: "pattern of files to"
     required: true
     default: ".sboms/*.xml"
   output-file:
@@ -13,6 +13,6 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.input-files }}
+    - ${{ inputs.input-files-pattern }}
     - ${{ inputs.output-file }}
 
