@@ -1,0 +1,19 @@
+action: Merge SBOMs
+description: Uses CycloneDX to merge SBOMs
+inputs:
+  input-files:
+    description: "file(s) to merge"
+    required: true
+    default: ".sboms/*.xml"
+  output-file:
+    description: Merged SBOM output location.
+    required: true
+    default: ".sboms/merged.xml"
+outputs:
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.input-files }}
+    - ${{ inputs.output-file }}
+
