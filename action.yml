@@ -4,7 +4,7 @@ inputs:
   input-files-pattern:
     description: "pattern of files to"
     required: true
-    default: ".sboms/*.xml"
+    default: "/github/workspace/.sboms/*.xml"
   output-file:
     description: Merged SBOM output location.
     required: true
